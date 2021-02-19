@@ -1,5 +1,5 @@
 {
-  "name": "hexo-theme-icarus",
+  "name": "hexo-theme-vg",
   "version": "3.0.0",
   "private": true,
   "engines": {
@@ -26,12 +26,12 @@
     "ajv": "^6.10.2",
     "bulma-stylus": "0.8.0",
     "deepmerge": "^4.2.2",
-    "hexo": "^4.2.0",
-    "hexo-log": "^1.0.0",
+    "hexo": "^5.3.0",
+    "hexo-log": "^2.0.0",
     "hexo-pagination": "^1.0.0",
     "hexo-renderer-inferno": "^0.1.1",
-    "hexo-renderer-stylus": "^1.1.0",
-    "hexo-util": "^1.8.0",
+    "hexo-renderer-stylus": "^2.0.1",
+    "hexo-util": "^2.4.0",
     "inferno": "^7.3.3",
     "inferno-create-element": "^7.3.3",
     "js-yaml": "^3.13.1",
