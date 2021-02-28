@@ -7,7 +7,7 @@ language: zh-CN
 timezone: ''
 url: http://bglh.xyz
 root: /
-permalink: :year/:month/:day/:title/
+permalink: :title/
 permalink_defaults:
 pretty_urls:
   trailing_index: true
@@ -37,38 +37,7 @@ algolia:
     - tags
 
 
-markdown:
-  render: # 渲染器设置
-    html: false # 过滤 HTML 标签
-    xhtmlOut: true # 使用 '/' 来闭合单标签 （比如 <br />）。
-    breaks: true # 转换段落里的 '\n' 到 <br>。
-    linkify: true # 将类似 URL 的文本自动转换为链接。
-    typographer: 
-    quotes: '“”‘’'
-  plugins: # markdown-it 插件设置
-    - plugin:
-        name: markdown-it-toc-and-anchor
-        enable: true
-        options: # 文章目录以及锚点应用的 class 名称，shoka 主题必须设置成这样
-          tocClassName: 'toc'
-          anchorClassName: 'anchor'
-    - plugin:
-        name: markdown-it-multimd-table
-        enable: true
-        options:
-          multiline: true
-          rowspan: true
-          headerless: true
-    - plugin:
-        name: ./markdown-it-furigana
-        enable: true
-        options:
-          fallbackParens: "()"
-    - plugin:
-        name: ./markdown-it-spoiler
-        enable: true
-        options:
-          title: "你知道得太多了"
+
 
 new_post_name: :title.md # File name of new posts
 default_layout: post
@@ -83,9 +52,9 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: true
+  enable: false
   line_number: true
-  auto_detect: false
+  auto_detect: true
   tab_replace: ''
   wrap: true
   hljs: false
@@ -107,6 +76,9 @@ index_generator:
 # Category & Tag
 default_category: uncategorized
 category_map:
+    博客:hexo
+    爬虫:python
+
 tag_map:
 
 # Metadata elements
@@ -129,8 +101,8 @@ pagination_dir: page
 
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
-include:
-exclude:
+# include:
+# exclude:
 ignore:
 
 # Extensions
@@ -142,3 +114,79 @@ theme: bg
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+# edit for Theme.shoka
+autoprefixer:
+  exclude:
+    - '*.min.css'
+
+# markdown:
+  render: # 渲染器设置
+    html: false # 过滤 HTML 标签
+    xhtmlOut: true # 使用 '/' 来闭合单标签 （比如 <br />）。
+    breaks: true # 转换段落里的 '\n' 到 <br>。
+    linkify: true # 将类似 URL 的文本自动转换为链接。
+    typographer:
+    quotes: '“”‘’'
+  plugins: # markdown-it插件设置
+    - plugin:
+        name: markdown-it-toc-and-anchor
+        enable: true
+        options: # 文章目录以及锚点应用的class名称，shoka主题必须设置成这样
+          tocClassName: 'toc'
+          anchorClassName: 'anchor'
+    - plugin:
+        name: markdown-it-multimd-table
+        enable: true
+        options:
+          multiline: true
+          rowspan: true
+          headerless: true
+    - plugin:
+        name: ./markdown-it-furigana
+        enable: true
+        options:
+          fallbackParens: "()"
+    - plugin:
+        name: ./markdown-it-spoiler
+        enable: true
+        options:
+          title: "你知道得太多了"
+minify:
+  html:
+    enable: true
+    stamp: false
+    exclude:
+      - '**/json.ejs'
+      - '**/atom.ejs'
+      - '**/rss.ejs'
+  css:
+    enable: true
+    stamp: false
+    exclude:
+      - '**/*.min.css'
+  js:
+    enable: true
+    stamp: false
+    mangle:
+      toplevel: true
+    output:
+    compress:
+    exclude:
+      - '**/*.min.js'
+feed:
+    limit: 20
+    order_by: "-date"
+    tag_dir: false
+    category_dir: false
+    rss:
+        enable: true
+        template: "themes/bg/layout/_alternate/rss.ejs"
+        output: "rss.xml"
+    atom:
+        enable: true
+        template: "themes/bg/layout/_alternate/atom.ejs"
+        output: "atom.xml"
+    jsonFeed:
+        enable: true
+        template: "themes/bg/layout/_alternate/json.ejs"
+        output: "feed.json"
