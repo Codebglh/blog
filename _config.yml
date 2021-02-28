@@ -35,6 +35,9 @@ algolia:
     - gallery
     - photos
     - tags
+    - excerpt:strip
+    - permalink
+    - slug
 
 
 
