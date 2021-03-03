@@ -81,6 +81,7 @@ default_category: uncategorized
 category_map:
          博客: hexo
          爬虫: python
+         黑苹果: hackintoh
 
 tag_map:
 

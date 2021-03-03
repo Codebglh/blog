@@ -1,3 +1,13 @@
+---
+title: 数据库管理
+date: 2021/03/03 08:53:25
+categories:
+- [爬虫]
+tags:
+---
+
+
+
 # [Mac 上的 MySQL 管理工具 -- Sequel Pro](https://segmentfault.com/a/1190000006255923)
 
 Sequel Pro 是 Mac 用户常用的 MySQL 管理软件，属于开源项目 CocoaMySQL 的一个分支。它支持包括索引在内的所有表管理功能，支持MySQL视图，可以同时使用多个窗口来操作多个数据库/表。完全可以媲美大家熟悉的 phpMyadmin。

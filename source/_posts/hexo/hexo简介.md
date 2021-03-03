@@ -1,8 +1,8 @@
 ---
-title: 第1周 计算
+title: hexo简介
 date: 2020/04/12 20:46:25
 categories:
-- [博客,hexo简介]
+- [博客]
 tags:
 ---
 
